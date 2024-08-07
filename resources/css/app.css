@@ -1,0 +1,45 @@
+:root {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    background-color: #171717;
+    color: rgb(191, 191, 191);
+    line-height: 1.5;
+}
+
+.medals-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.medals-table th,
+.medals-table td {
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    padding: 6px;
+    text-align: center;
+    font-size: 14px;
+    font-variant-numeric: tabular-nums;
+}
+
+.medals-table th {
+    position: sticky;
+    top: 0;
+    background-color: #1f1f1f;
+    color: #fff;
+}
+
+.medals-table td:first-child {
+    max-width: 100px;
+    font-weight: bold;
+}
