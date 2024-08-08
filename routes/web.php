@@ -8,3 +8,8 @@ Route::get('/', function () {
 });
 
 Route::get('/medals', MedalController::class)->name('medals');
+
+// Add /about
+Route::get('/about', function () {
+    return view('about');
+})->name('about');

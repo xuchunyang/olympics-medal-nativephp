@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Events\OpenAboutWindowEvent;
 use Native\Laravel\Facades\MenuBar;
 use Native\Laravel\Contracts\ProvidesPhpIni;
 use Native\Laravel\Menu\Menu;
@@ -20,7 +21,7 @@ class NativeAppServiceProvider implements ProvidesPhpIni
             ->height(500)
             ->withContextMenu(
                 Menu::new()
-                    ->label(config('app.name'))
+                    ->event(OpenAboutWindowEvent::class, 'About')
                     ->separator()
                     ->link('https://github.com/xuchunyang/olympics-medal-nativephp', 'GitHub')
                     ->separator()
