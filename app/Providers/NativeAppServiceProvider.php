@@ -3,8 +3,8 @@
 namespace App\Providers;
 
 use Native\Laravel\Facades\MenuBar;
-use Native\Laravel\Facades\Window;
 use Native\Laravel\Contracts\ProvidesPhpIni;
+use Native\Laravel\Menu\Menu;
 
 class NativeAppServiceProvider implements ProvidesPhpIni
 {
@@ -18,6 +18,14 @@ class NativeAppServiceProvider implements ProvidesPhpIni
             ->icon(resource_path('images/menuBarIconTemplate.png'))
             ->width(400)
             ->height(500)
+            ->withContextMenu(
+                Menu::new()
+                    ->label(config('app.name'))
+                    ->separator()
+                    ->link('https://github.com/xuchunyang/olympics-medal-nativephp', 'GitHub')
+                    ->separator()
+                    ->quit()
+            )
             ->route('medals');
     }
 
