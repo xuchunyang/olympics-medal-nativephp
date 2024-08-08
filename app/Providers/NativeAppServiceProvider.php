@@ -15,7 +15,7 @@ class NativeAppServiceProvider implements ProvidesPhpIni
     public function boot(): void
     {
         MenuBar::create()
-            ->icon(storage_path('app/menuBarIconTemplate.png'))
+            ->icon(resource_path('images/menuBarIconTemplate.png'))
             ->width(400)
             ->height(500)
             ->route('medals');
